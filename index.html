@@ -492,7 +492,7 @@
                 ? novoValor
                 : formValues.select_atts)
           );
-          formValues.mets = (finded.metsMin * formValues.time).toFixed(2);
+          formValues.mets = finded.mets;
         }
         formValues.kcal = metToKcal().toFixed(0);
         loadOfferTotal();
@@ -583,7 +583,7 @@
             "width: 65px;" +
             (i == 0 ? "border-top-width: 1px;" : "border-top-width: 0px;");
           metsP.className = "input input-tabel";
-          metsP.textContent = iterator.mets + " mets";
+          metsP.textContent = attJSON.find(e=> e.att == iterator.att).mets + " mets";
           rowItem.appendChild(metsP);
 
           contain.appendChild(rowItem);
